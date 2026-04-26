@@ -11,5 +11,6 @@ def read_todo_file(file_path):
       return []
 def write_todo_file(file_path, tasks):
     """Writes tasks to a file, one per line."""
-    # TODO: Implementar escritura de tareas según README.md
-    raise NotImplementedError
+    with open(file_path, 'w') as file:
+        for task in tasks:
+            file.write(task + '\n')
