@@ -8,7 +8,8 @@ def read_todo_file(file_path):
             return file.read().splitlines()
     except FileNotFoundError:
       print(f"File {file_path} not found! Returning an empty to-do list.")
-      return []
+      with open(file_path, 'w') as file:
+       return []
 def write_todo_file(file_path, tasks):
     """Writes tasks to a file, one per line."""
     with open(file_path, 'w') as file:
