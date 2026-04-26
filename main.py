@@ -43,10 +43,11 @@ Examples:
             elif comando == "remove":
                 if i + 1 >= len(sys.argv):
                     raise IndexError('Task description required for "remove".')    
+                tarea_a_quitar = sys.argv[i + 1]
                 if tarea_a_quitar in tasks:
-                 tasks.remove(tarea_a_quitar)
-                 print(f'Task "{tarea_a_quitar}" removed.')
-                 cambios_realizados = True
+                    tasks.remove(tarea_a_quitar)
+                    print(f'Task "{tarea_a_quitar}" removed.')
+                    cambios_realizados = True
                 else:
                     print(f'Task "{tarea_a_quitar}" not found.')
                 i += 2
