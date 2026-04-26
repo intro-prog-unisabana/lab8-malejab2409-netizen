@@ -16,7 +16,5 @@ def main():
             print(task)
     except IndexError as f:
         print(f)
-    except as f:
-        print(f"An unexpected error occurred: {f}")
 if __name__ == "__main__":
     main()
