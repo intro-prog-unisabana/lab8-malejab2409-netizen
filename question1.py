@@ -3,11 +3,19 @@
 Implementa una CLI que calcule carga por punto de soporte.
 """
 import sys 
-if len (sys.argv) != 2:
-   newtons = sys.argv[1]
-   puntos_soporte  = sys.argv[2]
-   load_per_support = newtons / puntos_soporte
-try:
+def main():
+   try:
+    if len (sys.argv) != 3:
+        print("Error: Invalid input! Enter numeric values only.")
+        return 
     newtons = float(sys.argv[1])
-    puntos_soporte  = int(sys.argv[2])
-    load_per_support = newtons / puntos_soporte
+    puntos_de_soporte = float(sys.argv[2])
+    if puntos_de_soporte == 0:
+        print("Error: Cannot divide by zero! Supports must be greater than zero.")
+        return
+    load_per_support = newtons / puntos_de_soporte
+    print(f"Load per support point: {load_per_support:.2f} N")
+   except ValueError:
+    print("Error: Invalid input! Enter numeric values only.")
+   except:
+        print("Error: Invalid input! Enter numeric values only.")
