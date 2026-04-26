@@ -34,7 +34,7 @@ Examples:
                     i += 1
             elif comando == "--add":
                 if i + 1 >= len(sys.argv):
-                    raise IndexError('Task description required for "add"')
+                    raise IndexError('Task description required for "add".')
                 nueva_tarea = sys.argv[i + 1]
                 tasks.append(nueva_tarea)
                 print(f'Task "{nueva_tarea}" added.')
@@ -42,7 +42,7 @@ Examples:
                 i += 2
             elif comando == "remove":
                 if i + 1 >= len(sys.argv):
-                    raise IndexError('Task description required for "remove"')    
+                    raise IndexError('Task description required for "remove".')    
                 if tarea_a_quitar in tasks:
                  tasks.remove(tarea_a_quitar)
                  print(f'Task "{tarea_a_quitar}" removed.')
