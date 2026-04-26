@@ -19,3 +19,5 @@ def main():
     print("Error: Invalid input! Enter numeric values only.")
    except:
         print("Error: Invalid input! Enter numeric values only.")
+if __name__ == "__main__":
+    main()
