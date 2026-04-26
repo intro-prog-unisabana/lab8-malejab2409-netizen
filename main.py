@@ -6,15 +6,19 @@ def main():
     try:
         if len(sys.argv) < 2:
             raise IndexError("Insufficient arguments provided!")
-        print("Command-line arguments:")
-        for arg in sys.argv[1:]:
-            print(arg)
-        file_path = sys.argv[1]
-        tasks = read_todo_file(file_path)
-        print("Tasks:")
-        for task in tasks:
-            print(task)
+        if len(sys.argv) >= 3:
+            comando = sys.argv[2]
+            file_path = sys.argv[1]
+            if comando == "view":
+                tasks = read_todo_file(file_path)
+                print("Tasks:")
+                for task in tasks:
+                    print(task)
+            else:
+                raise ValueError("Command not found!")
     except IndexError as f:
+        print(f)
+    except ValueError as f:
         print(f)
 if __name__ == "__main__":
     main()
