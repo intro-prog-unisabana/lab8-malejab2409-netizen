@@ -33,7 +33,6 @@ def main():
                 else:
                     print(f'Task "{tarea_a_quitar}" not found.')
             else:
-                # Si no es ninguno de los anteriores
                 raise ValueError("Command not found!")
     except IndexError as e:
         print(e)
